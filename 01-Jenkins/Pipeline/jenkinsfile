@@ -1,9 +1,6 @@
 node { 
  try  { 
- notify('Job Started')  
-
-
-      
+ notify('Job Started')      
   stage('Git-Checkout') { 
    git 'https://github.com/amitvashisttech/mindtree-devops-30Jan2020.git' 
   } 
@@ -37,13 +34,7 @@ node {
    notify("Error ${err}") 
    currentBuild.result = 'FAILURE' 
  } 
- } 
- 
-
- 
-
- 
- 
+ }  
  def notify(status){ 
      emailext ( 
   to: "amitvashist7@gmail.com", 
